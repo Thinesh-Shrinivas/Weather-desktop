@@ -21,7 +21,7 @@ class NavBarComponet extends Component {
         <Collapse navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/Home">Home</NavLink>
+              <NavLink href="/home">Home</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

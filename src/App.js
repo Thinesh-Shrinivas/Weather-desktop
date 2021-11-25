@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import LoginScreen from "./Login/login";
 import { Router } from "@reach/router";
 import NavBarComponet from "./nav/Navbar/Navbar";
+import Home from "./Components/Component";
 
 function App() {
   // const [initaialData, updateInitaialData] = useState([]);
@@ -29,6 +30,7 @@ function App() {
       <NavBarComponet />
       <Router>
         <LoginScreen path="/" />
+        <Home path="/home" />
       </Router>
     </React.Fragment>
   );
