@@ -12,6 +12,8 @@ import {
   Input,
   Form,
   FormGroup,
+  Toast,
+  ToastBody,
 } from "reactstrap";
 
 class LoginScreen extends Component {
@@ -21,6 +23,7 @@ class LoginScreen extends Component {
       userCredential: {},
       pswd: "",
       usrName: "",
+      toastFlaf: false,
     };
   }
 
@@ -34,7 +37,13 @@ class LoginScreen extends Component {
       this.state.userCredential.userName === this.state.usrName &&
       this.state.userCredential.pswd === this.state.pswd
     ) {
-      window.location.reload("/");
+      window.location.replace("/home");
+    } else {
+      this.setState({ toastFlaf: true });
+
+      setTimeout(() => {
+        this.setState({ toastFlaf: false });
+      }, 2000);
     }
   }
 
@@ -77,14 +86,17 @@ class LoginScreen extends Component {
                     color="success"
                     size="sm"
                     className="login_btn"
-                    onClick={() =>
-                      this.SubmitValue(this.userName, this.passWord)
-                    }
+                    onClick={() => this.SubmitValue()}
                   >
                     Login
                   </Button>
                 </CardFooter>
               </CardItem>
+              <div className="p-3  my-2 rounded">
+                <Toast isOpen={this.state.toastFlaf}>
+                  <ToastBody>Incorrect Credential</ToastBody>
+                </Toast>
+              </div>
             </Col>
           </Row>
         </Container>
