@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import ServiceInstance from "./Services/Service";
 import LoginScreen from "./Login/login";
+import { Router } from "@reach/router";
+import NavBarComponet from "./nav/Navbar/Navbar";
 
 function App() {
   // const [initaialData, updateInitaialData] = useState([]);
@@ -24,7 +26,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <LoginScreen />
+      <NavBarComponet />
+      <Router>
+        <LoginScreen path="/" />
+      </Router>
     </React.Fragment>
   );
 }
