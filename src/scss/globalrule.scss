@@ -1,0 +1,17 @@
+// padding
+$global-padding: 10px;
+$global-padding-left: 5px;
+$global-padding-right: 5px;
+$global-padding-top: 5px;
+$global-padding-bottom: 5px;
+
+//margin
+$global-margin: 10px;
+$global-margin-left: 5px;
+$global-margin-right: 5px;
+$global-margin-top: 5px;
+$global-margin-bottom: 5px;
+
+@function assignProperty($property, $value) {
+  $property: $value;
+}
