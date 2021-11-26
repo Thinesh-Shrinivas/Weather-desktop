@@ -37,7 +37,10 @@ class LoginScreen extends Component {
       this.state.userCredential.userName === this.state.usrName &&
       this.state.userCredential.pswd === this.state.pswd
     ) {
+      this.props.action.UpdateFlag(true);
+
       window.location.replace("/home");
+      sessionStorage.setItem("LOGIN_FLAG", JSON.stringify({ lgoinFlag: true }));
     } else {
       this.setState({ toastFlaf: true });
 
@@ -92,9 +95,11 @@ class LoginScreen extends Component {
                   </Button>
                 </CardFooter>
               </CardItem>
-              <div className="p-3  my-2 rounded">
-                <Toast isOpen={this.state.toastFlaf}>
-                  <ToastBody>Incorrect Credential</ToastBody>
+              <div className="p-3 my-2 rounded">
+                <Toast isOpen={this.state.toastFlaf} className="bg-danger">
+                  <ToastBody className="text-light">
+                    Incorrect Credential
+                  </ToastBody>
                 </Toast>
               </div>
             </Col>

@@ -16,13 +16,21 @@ class NavBarComponet extends Component {
   render() {
     return (
       <Navbar color="light" expand="md" light>
-        <NavbarBrand href="/">Weather</NavbarBrand>
+        {!this.props.loginFlag ? (
+          <NavbarBrand href="/">Weather</NavbarBrand>
+        ) : (
+          <NavbarBrand href="/home">home</NavbarBrand>
+        )}
         <NavbarToggler onClick={function noRefCheck() {}} />
         <Collapse navbar>
           <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="/home">Home</NavLink>
-            </NavItem>
+            {this.props.loginFlag ? (
+              <NavItem>
+                <NavLink href="/home">Home</NavLink>
+              </NavItem>
+            ) : (
+              ""
+            )}
           </Nav>
         </Collapse>
       </Navbar>

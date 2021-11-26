@@ -15,3 +15,9 @@ $global-margin-bottom: 5px;
 @function assignProperty($property, $value) {
   $property: $value;
 }
+
+@function substractValue($givenValue, $substractValue) {
+  $result: 0;
+  $result: $givenValue - $substractValue;
+  @return $result;
+}

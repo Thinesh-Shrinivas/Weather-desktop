@@ -3,6 +3,6 @@
   .login_btn {
     display: block;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: substractValue($global-margin-right, 5);
   }
 }
