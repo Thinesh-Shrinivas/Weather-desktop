@@ -1,7 +1,14 @@
 import React from "react";
+import { Container } from "reactstrap";
+import TopSection from "./Home/TopSection/topsection";
 
 function Home() {
-  return <h4>home</h4>;
+  return (
+    <Container>
+      <h4>home</h4>
+      <TopSection />
+    </Container>
+  );
 }
 
 export default Home;

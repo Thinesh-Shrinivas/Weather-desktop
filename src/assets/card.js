@@ -4,7 +4,9 @@ import React from "react";
 function CardItem(props) {
   return (
     <React.Fragment>
-      <Card>{props.children}</Card>
+      <Card className={props.color ? "top-section-card-body" : ""}>
+        {props.children}
+      </Card>
     </React.Fragment>
   );
 }
