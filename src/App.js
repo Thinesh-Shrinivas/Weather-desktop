@@ -6,6 +6,7 @@ import Home from "./Components/Component";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as ActionCreator from "./redux/action";
+import Segments from "./assets/analytics/segments";
 
 function App(props) {
   useEffect(() => {
@@ -14,6 +15,9 @@ function App(props) {
       pswd: "admin",
     };
     localStorage.setItem("USER_CREDENTIAL", JSON.stringify(userCredential));
+    const analytics = new Segments();
+    analytics.initialize();
+    analytics.track("confirmed", {});
   }, []);
   // Empty array in the useEffect resembels the component Did mount
 
