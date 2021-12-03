@@ -7,7 +7,7 @@ class Segments {
     this.analytics.use(SegmentIntegration);
     this.integrationSettings = {
       "Segment.io": {
-        apiKey: "u9DWIn2sLDO0Qro9h1lLHZENJ7fpjfJH",
+        apiKey: "",
         retryQueue: true,
         addBundledMetadata: true,
       },
